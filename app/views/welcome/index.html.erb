@@ -1,0 +1,56 @@
+<h1>Welcome</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+
+<%= @homeland %>
+
+<ul>
+  <% @countries.each do |country| %>
+     <li class="h3"><%= country %></li>
+  <% end %>
+</ul>
+
+<%= image_tag "img1.jpg", alt:"Atacama",
+                            id: "chile",
+                            class: "country img-responsive",
+                            height: 300,
+                            width: 400 %>
+<%= image_tag "img2.jpg", alt:"Atacama",
+                            id: "chile",
+                            class: "country img-responsive",
+                            height: 300,
+                            width: 400 %>
+<%= image_tag "img3.jpg", alt:"Atacama",
+                            id: "chile",
+                            class: "country img-responsive",
+                            height: 300,
+                            width: 400 %>
+<%= image_tag "img4.jpg", alt:"Atacama",
+                            id: "chile",
+                            class: "country img-responsive",
+                            height: 300,
+                            width: 400 %>
+                        
+
+<div>
+    <% @travel_pics.each do |pic| %>
+       <li><%= image_tag pic, class: "img-responsive" %></li>
+    <% end %>
+</div>
+
+<table class="table">
+  <tr>
+    <% @united_states.each do |key,value| %>
+      <th><%= key.titleize %></th>
+    <% end %>
+  </tr>
+  <tr>
+    <% @united_states.each do |key,value| %>      
+      <% if value.kind_of?(Array) %>
+          <td><%= value.join(", ") %></td>
+      <% else %>
+         <td><%= value %></td>
+      <% end %> 
+    <% end %>
+  </tr>
+</table>
